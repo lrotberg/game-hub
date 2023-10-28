@@ -5,7 +5,7 @@ import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
-import { Platform } from "./hooks/useGames";
+import { Platform } from "./hooks/usePlatforms";
 import SortSelector from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
 
@@ -35,7 +35,10 @@ function App() {
       </GridItem>
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
-          <GenreList onSelectGenre={genre => setGameQuery({ ...gameQuery, genre })} selectedGenre={gameQuery.genre} />
+          <GenreList
+            onSelectGenre={genre => setGameQuery({ ...gameQuery, genre })}
+            selectedGenre={gameQuery.genre}
+          />
         </GridItem>
       </Show>
       <GridItem area="main">
